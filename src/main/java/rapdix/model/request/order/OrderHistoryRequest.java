@@ -13,6 +13,7 @@ public class OrderHistoryRequest {
     private String businessType;
     private String begin;
     private String end;
+    private Boolean filterExecuted;
     private String page;
     private String pageSize;
 }

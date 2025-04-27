@@ -17,6 +17,8 @@ public class CollectionRecordVO {
     private String businessType;
     private String transactionId;
     private String coin;
+    private String sym;
+    private String feePrice;
     private String amount;
     private String status;
     private String createdAt;

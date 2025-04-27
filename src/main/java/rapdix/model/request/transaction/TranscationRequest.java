@@ -10,6 +10,8 @@ import lombok.Data;
 public class TranscationRequest {
     private String orderId;
     private String sym;
+    private String exchange;
+    private String businessType;
     private String begin;
     private String end;
     private String limit;

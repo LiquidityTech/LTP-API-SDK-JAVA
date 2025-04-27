@@ -21,5 +21,7 @@ public class LoginRequest {
         
         @JSONField(ordinal = 2) 
         private String sign;
+
+        private Boolean onlyTrade;
     }
 } 

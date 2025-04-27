@@ -11,6 +11,8 @@ public class CollectionRecordRequest {
     private String exchange;
     private String instType;
     private String coin;
+    private String subPortfolioId;
+    private String sym;
     private String begin;
     private String end;
     private String pageNum;

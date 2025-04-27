@@ -7,10 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rapdix.websocket.listener.DefaultWebSocketMessageListener;
 import rapdix.websocket.listener.WebSocketMessageListener;
-import rapdix.websocket.model.request.UserLoginRequest;
-import rapdix.websocket.model.request.PlaceOrderRequest;
-import rapdix.websocket.model.request.CancelOrderRequest;
-import rapdix.websocket.model.request.CancelOrdersRequest;
+import rapdix.websocket.model.request.*;
 import rapdix.util.AuthUtil;
 
 import java.net.URI;
@@ -208,4 +205,18 @@ public class UserWebSocketClient {
         String jsonRequest = JSON.toJSONString(request);
         send(jsonRequest);
     }
-} 
+
+    /**
+     * Replace order
+     *
+     * @param request Replace order request
+     */
+    public void replaceOrder(ReplaceOrderRequest request) {
+        if (!isConnected) {
+            throw new RuntimeException("WebSocket not connected");
+        }
+
+        String jsonRequest = JSON.toJSONString(request);
+        send(jsonRequest);
+    }
+}

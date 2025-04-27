@@ -2,9 +2,11 @@ import rapdix.client.RapdixAPIClient;
 import rapdix.model.PageEntity;
 import rapdix.model.request.account.AccountPositionModeRequest;
 import rapdix.model.request.account.AccountQueryRequest;
+import rapdix.model.request.broker.CollectionRecordRequest;
 import rapdix.model.request.order.*;
 import rapdix.model.response.ApiResponse;
 import rapdix.model.vo.AccountVO;
+import rapdix.model.vo.broker.CollectionRecordVO;
 import rapdix.model.vo.order.OrderPlaceVO;
 import rapdix.model.vo.order.OrderVO;
 import rapdix.model.vo.order.OrderReplaceVO;
@@ -25,7 +27,18 @@ public class OrderPlaceTest {
         orderTest.queryAccount();
         orderTest.cancelAll();
         orderTest.changePositionMode();
+//        orderTest.collectionRecord();
     }
+
+    public void collectionRecord() {
+        RapdixAPIClient client = new RapdixAPIClient(API_KEY, SECRET_KEY);
+        CollectionRecordRequest request = CollectionRecordRequest.builder()
+//                .exchange("BINANCE")
+                .build();
+        ApiResponse<CollectionRecordVO> response = client.broker().getCollectionRecord(request);
+        System.out.println(response);
+    }
+
 
     public void placeOrder() {
         RapdixAPIClient client = new RapdixAPIClient(API_KEY, SECRET_KEY);
