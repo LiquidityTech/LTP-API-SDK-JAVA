@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Test;
 import rapdix.websocket.client.PublicWebSocketClient;
 import rapdix.websocket.listener.WebSocketMessageListener;
 
